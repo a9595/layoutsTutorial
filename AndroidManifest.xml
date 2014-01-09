@@ -30,9 +30,13 @@
             android:name="com.example.layouts.TableActivity"
             android:label="Table" >
         </activity>
-         <activity
+        <activity
             android:name="com.example.layouts.RelativeActivity"
             android:label="Relative" >
+        </activity>
+        <activity
+            android:name="com.example.layouts.AbsoluteActivity"
+            android:label="Absolute" >
         </activity>
     </application>
 

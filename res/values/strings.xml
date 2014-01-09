@@ -12,5 +12,6 @@
     <string name="ok">OK</string>
     <string name="cencel">Cancel</string>
     <string name="accept_all">Accept all</string>
+    <string name="absolute_layout">Absolute Layout</string>
 
 </resources>

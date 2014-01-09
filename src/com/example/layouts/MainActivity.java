@@ -26,10 +26,33 @@ public class MainActivity extends Activity {
 		startActivity(myIntent);
 	}
 	
-	public void RelativeOnClick(View view) {
-		Intent myIntent = new Intent(view.getContext(), RelativeActivity.class);
-		startActivity(myIntent);
+	//?? Is it OK to use 1 listener for few buttons ? 
+	public void RelativeAndAbsoluteOnClick(View view) {
+		Intent myIntent = null;
+		switch (view.getId()) {
+		case R.id.btnRelative:
+			myIntent = new Intent(view.getContext(), RelativeActivity.class);
+			break;
+		case R.id.btnAbsolute:
+			myIntent = new Intent(view.getContext(), AbsoluteActivity.class);
+			break;
+		}
+
+		if (myIntent != null)
+			startActivity(myIntent);
 	}
+
+	//?? or it's better to use separate listeners for each button? 
+//	public void RelativeOnClick(View view) {
+//		Intent myIntent = new Intent(view.getContext(), RelativeActivity.class);
+//		startActivity(myIntent);
+//	}
+//
+//	public void AbsoluteOnClick(View view) {
+//		Intent myIntent = new Intent(view.getContext(), AbsoluteActivity.class);
+//		startActivity(myIntent);
+//	}
+
 	
 
 }
