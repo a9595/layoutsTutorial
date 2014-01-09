@@ -24,30 +24,34 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int action_settings=0x7f080017;
+        public static final int action_settings=0x7f08001b;
         public static final int btnAbsolute=0x7f080008;
-        public static final int btnCencel=0x7f080010;
+        public static final int btnCencel=0x7f080014;
         public static final int btnLinear=0x7f080005;
-        public static final int btnOK=0x7f08000f;
+        public static final int btnOK=0x7f080013;
         public static final int btnRelative=0x7f080007;
         public static final int btnTable=0x7f080006;
-        public static final int button1=0x7f080000;
+        public static final int button1=0x7f080004;
         public static final int button2=0x7f080009;
         public static final int button3=0x7f08000a;
         public static final int button4=0x7f08000b;
         public static final int button5=0x7f08000c;
-        public static final int editText=0x7f08000e;
-        public static final int label=0x7f08000d;
-        public static final int radiProfession=0x7f080001;
-        public static final int radioAlone=0x7f080004;
-        public static final int radioAndroidDev=0x7f080002;
-        public static final int radioIOSDev=0x7f080003;
-        public static final int tableRow1=0x7f080011;
-        public static final int tableRow2=0x7f080012;
-        public static final int tableRow3=0x7f080014;
-        public static final int textView1=0x7f080013;
-        public static final int textView2=0x7f080015;
-        public static final int textView3=0x7f080016;
+        public static final int button6=0x7f08000e;
+        public static final int button7=0x7f08000f;
+        public static final int button8=0x7f080010;
+        public static final int editText=0x7f080012;
+        public static final int label=0x7f080011;
+        public static final int radiProfession=0x7f080000;
+        public static final int radioAlone=0x7f080003;
+        public static final int radioAndroidDev=0x7f080001;
+        public static final int radioIOSDev=0x7f080002;
+        public static final int tableRow1=0x7f080015;
+        public static final int tableRow2=0x7f080016;
+        public static final int tableRow3=0x7f080018;
+        public static final int textView1=0x7f080017;
+        public static final int textView2=0x7f080019;
+        public static final int textView3=0x7f08001a;
+        public static final int textViewWeight=0x7f08000d;
     }
     public static final class layout {
         public static final int absolute=0x7f030000;
@@ -67,6 +71,7 @@ public final class R {
         public static final int button=0x7f050004;
         public static final int cencel=0x7f050009;
         public static final int hello_world=0x7f050002;
+        public static final int layout_weight_using_=0x7f05000c;
         public static final int linear_layout=0x7f050003;
         public static final int ok=0x7f050008;
         public static final int relative_layout=0x7f050006;
