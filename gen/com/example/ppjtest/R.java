@@ -40,6 +40,11 @@ public final class R {
         public static final int button7=0x7f08000f;
         public static final int button8=0x7f080010;
         public static final int editText=0x7f080012;
+        public static final int groupToasts=0x7f08001c;
+        public static final int itemDontShow=0x7f08001f;
+        public static final int itemShowLongToast=0x7f08001d;
+        public static final int itemShowShortToast=0x7f080020;
+        public static final int itemSubShowLongToast=0x7f08001e;
         public static final int label=0x7f080011;
         public static final int radiProfession=0x7f080000;
         public static final int radioAlone=0x7f080003;

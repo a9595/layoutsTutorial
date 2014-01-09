@@ -4,6 +4,15 @@
         android:id="@+id/action_settings"
         android:orderInCategory="100"
         android:showAsAction="never"
-        android:title="@string/action_settings"/>
+        android:title="@string/action_settings" android:visible="false"/>
+    <group android:id="@+id/groupToasts">
+        <item android:id="@+id/itemShowLongToast" android:title="show long toast" android:orderInCategory="1">
+            <menu>
+                <item android:id="@+id/itemSubShowLongToast" android:title="show"/>
+                <item android:id="@+id/itemDontShow" android:title="dont show" android:onClick="onClickDontShow"/>
+            </menu>
+        </item>
+        <item android:id="@+id/itemShowShortToast" android:title="show short toast" android:orderInCategory="2"></item>
+    </group>
 
 </menu>
