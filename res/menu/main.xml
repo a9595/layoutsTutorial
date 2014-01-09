@@ -9,7 +9,7 @@
         <item android:id="@+id/itemShowLongToast" android:title="show long toast" android:orderInCategory="1">
             <menu>
                 <item android:id="@+id/itemSubShowLongToast" android:title="show"/>
-                <item android:id="@+id/itemDontShow" android:title="dont show" android:onClick="onClickDontShow"/>
+                <item android:id="@+id/itemDontShow" android:title="dont show"/>
             </menu>
         </item>
         <item android:id="@+id/itemShowShortToast" android:title="show short toast" android:orderInCategory="2"></item>

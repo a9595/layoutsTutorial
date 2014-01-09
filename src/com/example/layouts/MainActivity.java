@@ -2,26 +2,39 @@ package com.example.layouts;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.ContextMenu;
+import android.view.ContextMenu.ContextMenuInfo;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.ppjtest.R;
 
 public class MainActivity extends Activity {
 
+	final int MENU_COLOR_RED = 1;
+	final int MENU_COLOR_GREEN = 2;
+	final int MENU_COLOR_BLUE = 3;
 	private static final String TAG = "myLogs"; // tag for log
+	TextView tvContextMenu;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
+
 		Log.d(TAG, "onCreate");
+		tvContextMenu = (TextView) findViewById(R.id.tvContextMenu);
+		registerForContextMenu(tvContextMenu); // set context menu for btnLinear
 	}
 
+	// menu
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.main, menu);
 		return super.onCreateOptionsMenu(menu);
@@ -42,11 +55,38 @@ public class MainActivity extends Activity {
 		}
 	}
 
-	// another way of menu onClick listener ? which is better ?
-	public void onLogOutClick(MenuItem item) {
-		Log.d(TAG, "itemId :: " + item.getItemId());
+	// context menu
+	@Override
+	public void onCreateContextMenu(ContextMenu menu, View v,
+			ContextMenuInfo menuInfo) {
+		switch (v.getId()) {
+		case R.id.tvContextMenu:
+			menu.add(0, MENU_COLOR_RED, 0, "Red");
+			menu.add(0, MENU_COLOR_GREEN, 0, "Green");
+			menu.add(0, MENU_COLOR_BLUE, 0, "Blue");
+			break;
+		}
 	}
 
+	public boolean onContextItemSelected(MenuItem item) {
+		switch (item.getItemId()) {
+		case MENU_COLOR_RED:
+			tvContextMenu.setTextColor(Color.RED);
+			tvContextMenu.setText("Text color = red");
+			break;
+		case MENU_COLOR_GREEN:
+			tvContextMenu.setTextColor(Color.GREEN);
+			tvContextMenu.setText("Text color = green");
+			break;
+		case MENU_COLOR_BLUE:
+			tvContextMenu.setTextColor(Color.BLUE);
+			tvContextMenu.setText("Text color = blue");
+			break;
+		}
+		return super.onContextItemSelected(item);
+	}
+
+	// OnCLick listeners
 	public void LinearOnClick(View view) {
 		Toast.makeText(this, "Please wait...", Toast.LENGTH_SHORT).show();
 		Intent myIntent = new Intent(view.getContext(), LinearActivity.class);

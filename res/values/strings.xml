@@ -14,5 +14,6 @@
     <string name="accept_all">Accept all</string>
     <string name="absolute_layout">Absolute Layout</string>
     <string name="layout_weight_using_">layout_weight using:</string>
+    <string name="perform_long_press_on_me">Perform long press on me</string>
 
 </resources>

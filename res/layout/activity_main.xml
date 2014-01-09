@@ -36,4 +36,10 @@
         android:onClick="RelativeAndAbsoluteOnClick"
         android:text="@string/absolute_layout" />
 
+    <TextView
+        android:id="@+id/tvContextMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/perform_long_press_on_me" />
+
 </LinearLayout>
