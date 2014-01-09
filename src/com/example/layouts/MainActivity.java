@@ -10,7 +10,6 @@ import android.view.ContextMenu.ContextMenuInfo;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -64,6 +63,7 @@ public class MainActivity extends Activity {
 			menu.add(0, MENU_COLOR_RED, 0, "Red");
 			menu.add(0, MENU_COLOR_GREEN, 0, "Green");
 			menu.add(0, MENU_COLOR_BLUE, 0, "Blue");
+			getMenuInflater().inflate(R.menu.main, menu); // + add XML menu
 			break;
 		}
 	}
@@ -82,6 +82,11 @@ public class MainActivity extends Activity {
 			tvContextMenu.setTextColor(Color.BLUE);
 			tvContextMenu.setText("Text color = blue");
 			break;
+		case R.id.itemSubShowLongToast:
+			// ?? how can I avoid the code duplication ??
+			Toast.makeText(this, "Long Toast", Toast.LENGTH_SHORT).show();
+		case R.id.itemShowShortToast:
+			Toast.makeText(this, "Short Toast", Toast.LENGTH_SHORT).show();
 		}
 		return super.onContextItemSelected(item);
 	}
