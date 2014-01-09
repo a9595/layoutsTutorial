@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">PPJtest</string>
+    <string name="app_name">LayoutTutorial</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
     <string name="linear_layout">Linear Layout</string>
     <string name="button">Button</string>
     <string name="table_layout">Table Layout</string>
     <string name="relative_layout">Relative Layout</string>
+    <string name="type_here_">Type here:</string>
+    <string name="ok">OK</string>
+    <string name="cencel">Cancel</string>
+    <string name="accept_all">Accept all</string>
 
 </resources>
