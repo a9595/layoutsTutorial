@@ -1,4 +1,6 @@
-package com.example.ppjtest;
+package com.example.layouts;
+
+import com.example.ppjtest.R;
 
 import android.os.Bundle;
 import android.app.Activity;
@@ -23,5 +25,11 @@ public class MainActivity extends Activity {
 		Intent myIntent = new Intent(view.getContext(), TableActivity.class);
 		startActivity(myIntent);
 	}
+	
+	public void RelativeOnClick(View view) {
+		Intent myIntent = new Intent(view.getContext(), RelativeActivity.class);
+		startActivity(myIntent);
+	}
+	
 
 }
