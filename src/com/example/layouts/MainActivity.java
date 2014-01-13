@@ -23,49 +23,12 @@ public class MainActivity extends Activity {
 	private static final String TAG = "myLogs"; // tag for log
 	TextView tvContextMenu;
 
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-
-		Log.d(TAG, "onCreate");
-		tvContextMenu = (TextView) findViewById(R.id.tvContextMenu);
-		registerForContextMenu(tvContextMenu); // set context menu for btnLinear
-	}
-
-	// menu
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.main, menu);
-		return super.onCreateOptionsMenu(menu);
-	}
-
-	@Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Handle item selection
-		switch (item.getItemId()) {
-		case R.id.itemSubShowLongToast:
-			Toast.makeText(this, "Long Toast", Toast.LENGTH_SHORT).show();
-			return true;
-		case R.id.itemShowShortToast:
-			Toast.makeText(this, "Short Toast", Toast.LENGTH_SHORT).show();
-			return true;
-		default:
-			return super.onOptionsItemSelected(item);
-		}
-	}
-
-	// context menu
-	@Override
-	public void onCreateContextMenu(ContextMenu menu, View v,
-			ContextMenuInfo menuInfo) {
-		switch (v.getId()) {
-		case R.id.tvContextMenu:
-			menu.add(0, MENU_COLOR_RED, 0, "Red");
-			menu.add(0, MENU_COLOR_GREEN, 0, "Green");
-			menu.add(0, MENU_COLOR_BLUE, 0, "Blue");
-			getMenuInflater().inflate(R.menu.main, menu); // + add XML menu
-			break;
-		}
+	// OnCLick listeners
+	public void LinearOnClick(View view) {
+		Toast.makeText(this, "Please wait...", Toast.LENGTH_SHORT).show();
+		Intent myIntent = new Intent("com.layoutTutorial.showLinear");
+		startActivity(myIntent);
+		Log.d(TAG, "LinearOnClick");
 	}
 
 	public boolean onContextItemSelected(MenuItem item) {
@@ -91,18 +54,49 @@ public class MainActivity extends Activity {
 		return super.onContextItemSelected(item);
 	}
 
-	// OnCLick listeners
-	public void LinearOnClick(View view) {
-		Toast.makeText(this, "Please wait...", Toast.LENGTH_SHORT).show();
-		Intent myIntent = new Intent(view.getContext(), LinearActivity.class);
-		startActivity(myIntent);
-		Log.d(TAG, "LinearOnClick");
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+
+		Log.d(TAG, "onCreate");
+		tvContextMenu = (TextView) findViewById(R.id.tvContextMenu);
+		registerForContextMenu(tvContextMenu); // set context menu for btnLinear
 	}
 
-	public void TableOnClick(View view) {
-		Intent myIntent = new Intent(view.getContext(), TableActivity.class);
-		startActivity(myIntent);
-		Log.d(TAG, "TableOnClick");
+	// context menu
+	@Override
+	public void onCreateContextMenu(ContextMenu menu, View v,
+			ContextMenuInfo menuInfo) {
+		switch (v.getId()) {
+		case R.id.tvContextMenu:
+			menu.add(0, MENU_COLOR_RED, 0, "Red");
+			menu.add(0, MENU_COLOR_GREEN, 0, "Green");
+			menu.add(0, MENU_COLOR_BLUE, 0, "Blue");
+			getMenuInflater().inflate(R.menu.main, menu); // + add XML menu
+			break;
+		}
+	}
+
+	// menu
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.main, menu);
+		return super.onCreateOptionsMenu(menu);
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+		// Handle item selection
+		switch (item.getItemId()) {
+		case R.id.itemSubShowLongToast:
+			Toast.makeText(this, "Long Toast", Toast.LENGTH_SHORT).show();
+			return true;
+		case R.id.itemShowShortToast:
+			Toast.makeText(this, "Short Toast", Toast.LENGTH_SHORT).show();
+			return true;
+		default:
+			return super.onOptionsItemSelected(item);
+		}
 	}
 
 	// ?? Is it OK to use 1 listener for few buttons ?
@@ -119,6 +113,12 @@ public class MainActivity extends Activity {
 
 		if (myIntent != null)
 			startActivity(myIntent);
+	}
+
+	public void TableOnClick(View view) {
+		Intent myIntent = new Intent(view.getContext(), TableActivity.class);
+		startActivity(myIntent);
+		Log.d(TAG, "TableOnClick");
 	}
 
 	// ?? or it's better to use separate listeners for each button?
