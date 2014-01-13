@@ -39,8 +39,8 @@ public class LinearActivity extends Activity implements
 		//get & set Action from intent
 		Intent intent = getIntent();
 		String action = intent.getAction();
-
-		String format = "intent Action = " + action;
+		String extra = intent.getStringExtra("Extra");
+		String format = "intent Action = " + action + "\n extra = " + extra;
 		tvAction.setText(format);
 
 	}

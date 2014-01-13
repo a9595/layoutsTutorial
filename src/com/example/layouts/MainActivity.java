@@ -27,6 +27,7 @@ public class MainActivity extends Activity {
 	public void LinearOnClick(View view) {
 		Toast.makeText(this, "Please wait...", Toast.LENGTH_SHORT).show();
 		Intent myIntent = new Intent("com.layoutTutorial.showLinear");
+		myIntent.putExtra("Extra", "my Extra");
 		startActivity(myIntent);
 		Log.d(TAG, "LinearOnClick");
 	}
