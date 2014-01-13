@@ -21,16 +21,41 @@ public class MainActivity extends Activity {
 	final int MENU_COLOR_GREEN = 2;
 	final int MENU_COLOR_BLUE = 3;
 	private static final String TAG = "myLogs"; // tag for log
-	TextView tvContextMenu;
+	TextView tvContextMenu, tvIntentResult;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_main);
+
+		Log.d(TAG, "onCreate");
+		tvContextMenu = (TextView) findViewById(R.id.tvContextMenu);
+		tvIntentResult = (TextView) findViewById(R.id.tvIntentResult);
+		registerForContextMenu(tvContextMenu); // set context menu for btnLinear
+	}
 
 	// OnCLick listeners
 	public void LinearOnClick(View view) {
 		Toast.makeText(this, "Please wait...", Toast.LENGTH_SHORT).show();
 		Intent myIntent = new Intent("com.layoutTutorial.showLinear");
 		myIntent.putExtra("Extra", "my Extra");
-		startActivity(myIntent);
+		startActivityForResult(myIntent, 1);
 		Log.d(TAG, "LinearOnClick");
 	}
+
+	protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+		if (requestCode == 1) {
+
+			if (resultCode == RESULT_OK) {
+				String result = data.getStringExtra("result");
+				tvIntentResult.setText(result);
+			}
+			if (resultCode == RESULT_CANCELED) {				
+				tvIntentResult.setText("You have no result :( ");
+			}
+		}
+	}// onActivityResult
 
 	public boolean onContextItemSelected(MenuItem item) {
 		switch (item.getItemId()) {
@@ -53,16 +78,6 @@ public class MainActivity extends Activity {
 			Toast.makeText(this, "Short Toast", Toast.LENGTH_SHORT).show();
 		}
 		return super.onContextItemSelected(item);
-	}
-
-	@Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
-
-		Log.d(TAG, "onCreate");
-		tvContextMenu = (TextView) findViewById(R.id.tvContextMenu);
-		registerForContextMenu(tvContextMenu); // set context menu for btnLinear
 	}
 
 	// context menu
