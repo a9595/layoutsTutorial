@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    tools:context="com.example.layouts.TableActivity" >
 
     <TableRow
         android:id="@+id/tableRow1"
@@ -13,7 +15,6 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/button" />
-
     </TableRow>
 
     <TableRow
@@ -24,14 +25,13 @@
         <TextView
             android:id="@+id/tvAction"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
 
         <Button
             android:id="@+id/button2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/button" />
-
     </TableRow>
 
     <TableRow
@@ -42,19 +42,18 @@
         <TextView
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/textView3"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
 
         <Button
             android:id="@+id/button3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/button" />
-
     </TableRow>
 
 </TableLayout>

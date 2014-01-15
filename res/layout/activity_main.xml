@@ -37,12 +37,6 @@
         android:onClick="RelativeAndAbsoluteOnClick"
         android:text="@string/absolute_layout" />
 
-    <Button
-        android:id="@+id/btnAnotation"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="Anotation Test" />
-
     <TextView
         android:id="@+id/tvContextMenu"
         android:layout_width="wrap_content"
